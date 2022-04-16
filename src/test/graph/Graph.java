@@ -33,7 +33,7 @@ public class Graph<T extends Comparable<T>> {
 		return nodes;
 	}
 
-	public Set<Edge> getEdges() { // Get all graph's edges
+	public Set<Edge> getAllEdges() { // Get all graph's edges
 		return edges;
 	}
 	
@@ -79,7 +79,7 @@ public class Graph<T extends Comparable<T>> {
 		}
 	}
 	
-	public void remooveEdge(T node1, T node2) {
+	public void removeEdge(T node1, T node2) {
 		
 		Set<T> edgeNodes = new HashSet<>(2);
 		
@@ -112,13 +112,13 @@ public class Graph<T extends Comparable<T>> {
 		
 		if(this.nodes.contains(node)) { //check node in graph
 			
-			ArrayList<Edge>forRemoveEdge=new ArrayList<>(); //List edges for remove
+			ArrayList<Edge>edgesForRemove=new ArrayList<>(); //List edges for remove
 			
 			for (Edge edge:edges) {
 				
 				if(edge.hasEdgeNode(node)) { //check - this edge has this node
 					
-					forRemoveEdge.add(edge); //get edges for delete
+					edgesForRemove.add(edge); //get edges for delete
 					
 					//Remove all edge that has node before delete this node
 					/*remooveEdge(edge.getNodesFromEdge().get(0), edge.getNodesFromEdge().get(1));
@@ -127,10 +127,10 @@ public class Graph<T extends Comparable<T>> {
 				
 			}
 			
-			if(forRemoveEdge.size()!=0) { //delete edges
+			if(edgesForRemove.size()!=0) { //delete edges
 				
-				for(int i=0; i<forRemoveEdge.size();i++) {
-					this.edges.remove(forRemoveEdge.get(i));
+				for(int i=0; i<edgesForRemove.size();i++) {
+					this.edges.remove(edgesForRemove.get(i));
 				}
 				
 				System.out.println("All edges has benn delete");
@@ -155,9 +155,11 @@ public class Graph<T extends Comparable<T>> {
 	
 	private class Edge {
 		
+		
 		private final T node1;
 		
 		private final T node2;
+		
 		
 		Edge (T node1, T node2){
 			
@@ -165,6 +167,7 @@ public class Graph<T extends Comparable<T>> {
 			
 			this.node2=node2;
 		}
+		
 		
 	boolean hasEdgeNode(T node) { //check edge has this node
 		

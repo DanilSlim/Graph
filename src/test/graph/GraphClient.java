@@ -91,7 +91,7 @@ public class GraphClient {
 		
 		System.out.println(graph);
 		
-		graph.remooveEdge(2, 7);
+		graph.removeEdge(2, 7);
 		
 		System.out.println(graph);
 		
@@ -103,7 +103,7 @@ public class GraphClient {
 		
 		System.out.println(graph);
 		
-		graph.remooveEdge(7, 2);
+		graph.removeEdge(7, 2);
 		
 		System.out.println(graph);
 		
@@ -111,7 +111,7 @@ public class GraphClient {
 		
 		System.out.println(graph3);
 		
-		graph3.remooveEdge("one", "three");
+		graph3.removeEdge("one", "three");
 		
 		System.out.println(graph3);
 	}
