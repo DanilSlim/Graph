@@ -127,14 +127,17 @@ public class Graph<T extends Comparable<T>> {
 				
 			}
 			
-			if(edgesForRemove.size()!=0) { //delete edges
+			edgesForRemove.forEach(t->this.edges.remove(t));//new delete edges
+			
+			
+			/*if(edgesForRemove.size()!=0) { //delete edges
 				
 				for(int i=0; i<edgesForRemove.size();i++) {
 					this.edges.remove(edgesForRemove.get(i));
 				}
 				
-				System.out.println("All edges has benn delete");
-			}
+				System.out.println("All edges has been delete");
+			}*/
 			
 			this.nodes.remove(node);
 			System.out.println("Node "+node+" has been success delete");
@@ -169,7 +172,7 @@ public class Graph<T extends Comparable<T>> {
 		}
 		
 		
-	boolean hasEdgeNode(T node) { //check edge has this node
+	private boolean hasEdgeNode(T node) { //check that edge has node
 		
 		if(this.node1.equals(node)||this.node2.equals(node)) return true;
 		

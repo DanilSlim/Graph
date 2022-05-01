@@ -1,6 +1,8 @@
 package test.graph;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class GraphClient {
@@ -114,6 +116,16 @@ public class GraphClient {
 		graph3.removeEdge("one", "three");
 		
 		System.out.println(graph3);
+		
+		System.out.println("---------------------------------------------------");
+		System.out.println("---------------------------------------------------");
+		
+		
+		List<Integer> test = new ArrayList<>(2);
+		
+		test.add(1);
+		
+		test.forEach(t->System.out.println(t));
 	}
 
 }
